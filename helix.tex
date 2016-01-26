@@ -1,0 +1,51 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{amsmath}
+\usetikzlibrary{shapes.geometric}
+\tdplotsetmaincoords{60}{110}
+
+\begin{document}
+\begin{tikzpicture}[tdplot_main_coords]
+% \node [cylinder,rotate=90,draw,aspect=2,minimum width=2cm,minimum height=3.5cm](C){};
+% \foreach \t in {-90,-75,...,0}{%
+% \draw ({cos(\t)},{sin(\t)},{-0.25+\t/360})--({cos(\t+7)},{sin(\t +7)},{-0.23+\t/360});
+% }
+\foreach \t in {110,...,930}{%
+\draw[line width=1.5pt,color=black!15!red] ({cos(\t)},{sin(\t)},{-0.25+\t/360})--({cos(\t+1)},{sin(\t +1)},{-0.22+\t/360});
+}
+\foreach \t in {109,...,110}{%
+\draw[line width=1.5pt,color=black!15!red,<-] ({cos(\t)},{sin(\t)},{-0.25+\t/360})--({cos(\t+1)},{sin(\t +1)},{-0.22+\t/360});
+}
+
+% Propagation of beam
+\draw[thick,->,densely dotted] (0,0,2.3) -- (0,0,-0.4) node[anchor=south west] {-z};
+\foreach \t in {375,...,385}{%
+\draw[line width=1.5pt,color=black!15!red] ({cos(\t)},{sin(\t)},{-0.25+\t/360})--({cos(\t+1)},{sin(\t +1)},{-0.22+\t/360});
+}
+\foreach \t in {735,...,745}{%
+\draw[line width=1.5pt,color=black!15!red] ({cos(\t)},{sin(\t)},{-0.25+\t/360})--({cos(\t+1)},{sin(\t +1)},{-0.22+\t/360});
+}
+\draw[thick,->,color=black!15!blue,line width=0.4mm] (0,0,2.3) -- (-0.9,0,2.3) node[anchor=south] {y};
+
+\draw[thick,->,color=black!15!green,line width=0.4mm] (0,0,2.3) -- (0,0.8,2.3) node[anchor=north] {x};
+
+%current vector
+\draw[thick,->,line width=0.4mm] (0,1.1,-0.5) node[anchor=south west] {\ e$^{-}$} -- (-1.5,1.1,-0.5) node[anchor=south] {$\boldsymbol{\dot{J}}$};
+
+% Polarization vectors
+\draw[thick,<-] (0,-0.5,-1.1) -- (0,-0.5,-0.6 ) node[anchor=south] {};
+\draw[thick,<-] (0,-0.1,-1.1) -- (0,-0.1,-0.6 ) node[anchor=south] {};
+\draw[thick,<-] (0,0.3,-1.1) -- (0,0.3,-0.6 ) node[anchor=south] {};
+\draw[thick,<-] (0,0.7,-1.1) -- (0,0.7,-0.6 ) node[anchor=south] {};
+\draw[thick,]   (0,1.1,-1.1)  (0,1.1,-0.6 ) node[anchor=north] {\ $\mathcal{D}^z$};
+
+% spin ellipses
+\draw[black] (0,-0.5,-0.85) ellipse (0.2cm and 0.05cm);
+\draw[black] (0,-0.1,-0.85) ellipse (0.2cm and 0.05cm);
+\draw[black] (0,0.3,-0.85) ellipse (0.2cm and 0.05cm);
+\draw[black] (0,0.7,-0.85) ellipse (0.2cm and 0.05cm);
+% \draw[black] (0,1.1,-0.85) ellipse (0.2cm and 0.05cm);
+\end{tikzpicture}
+
+\end{document}

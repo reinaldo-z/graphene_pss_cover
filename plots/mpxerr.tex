@@ -1,0 +1,74 @@
+\documentclass{article}
+\begin{document}
+
+\gdef\mpxshipout{\shipout\hbox\bgroup
+  \setbox0=\hbox\bgroup}
+\gdef\stopmpxshipout{\egroup  \dimen0=\ht0 \advance\dimen0\dp0
+  \dimen1=\ht0 \dimen2=\dp0
+  \setbox0=\hbox\bgroup
+    \box0
+    \ifnum\dimen0>0 \vrule width1sp height\dimen1 depth\dimen2 
+    \else \vrule width1sp height1sp depth0sp\relax
+    \fi\egroup
+  \ht0=0pt \dp0=0pt \box0 \egroup}
+\mpxshipout% line 125 ./eta-up_y.mp
+-5%
+\stopmpxshipout
+\mpxshipout% line 128 ./eta-up_y.mp
+0%
+\stopmpxshipout
+\mpxshipout% line 131 ./eta-up_y.mp
+5%
+\stopmpxshipout
+\mpxshipout% line 134 ./eta-up_y.mp
+10%
+\stopmpxshipout
+\mpxshipout% line 137 ./eta-up_y.mp
+15%
+\stopmpxshipout
+\mpxshipout% line 140 ./eta-up_y.mp
+0.07%
+\stopmpxshipout
+\mpxshipout% line 143 ./eta-up_y.mp
+0.08%
+\stopmpxshipout
+\mpxshipout% line 146 ./eta-up_y.mp
+0.09%
+\stopmpxshipout
+\mpxshipout% line 149 ./eta-up_y.mp
+0.1%
+\stopmpxshipout
+\mpxshipout% line 152 ./eta-up_y.mp
+0.11%
+\stopmpxshipout
+\mpxshipout% line 155 ./eta-up_y.mp
+0.12%
+\stopmpxshipout
+\mpxshipout% line 158 ./eta-up_y.mp
+0.13%
+\stopmpxshipout
+\mpxshipout% line 161 ./eta-up_y.mp
+0.14%
+\stopmpxshipout
+\mpxshipout% line 168 ./eta-up_y.mp
+\Large Injection current $\boldsymbol{J}$%
+\stopmpxshipout
+\mpxshipout% line 170 ./eta-up_y.mp
+{\Large $\eta^{yxy}$ [mC$^{3}$/J$^{2}$s$^{2}$]}%
+\stopmpxshipout
+\mpxshipout% line 172 ./eta-up_y.mp
+{\Large Photon Energy (eV)}%
+\stopmpxshipout
+\mpxshipout% line 176 ./eta-up_y.mp
+Total response%
+\stopmpxshipout
+\mpxshipout% line 197 ./eta-up_y.mp
+Carbon contribution%
+\stopmpxshipout
+\mpxshipout% line 218 ./eta-up_y.mp
+Hydrogen contribution%
+\stopmpxshipout
+% line 245 ./eta-up_y.mp
+ \end{document}
+
+\end{document}
